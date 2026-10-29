@@ -1,0 +1,84 @@
+/* Paleta del sitio de GeneExprLupusMx (_pkgdown.yml y vignettes/lesson.css) */
+:root { --lila: #DFE2FB; --lila-claro: #ECEEFE; --turquesa: #007F99; --marino: #14164D; --morado: #3D3F8F; }
+
+/* Títulos como en el sitio */
+main h1, main h2, main h3, main h4, .tab-pane h3, .tab-pane h4, .tab-pane h5 {
+  font-weight: 700; line-height: 1.1; color: var(--turquesa);
+}
+.tab-content > .tab-pane > h3 { border-bottom: 4px solid var(--turquesa); padding-bottom: .3rem; margin-top: .5rem; }
+:not(pre) > code { color: var(--turquesa); background: var(--lila-claro); padding: 0 .25rem; border-radius: .2rem; }
+
+/* Tarjetas con encabezado lila, como los paneles de las infografías */
+.card { border-color: var(--lila); }
+.card-header { background: var(--lila); color: var(--marino); font-weight: 700; border-bottom: 0; }
+
+/* Notas */
+.alert { border: 1px solid; border-left-width: 5px; border-radius: .25rem; color: var(--marino); }
+.alert-info { background: #E8F6F4; border-color: #96D4CC; }      /* turquesa claro: grupo control */
+.alert-info a { color: #005F73; }
+.alert-secondary { background: var(--lila-claro); border-color: var(--lila); }
+.alert-warning { background: #FCF5D9; border-color: #F2D77A; }     /* amarillo bajo, como en lesson.css */
+.callout-pending { border: 1px solid #E05252; border-left-width: 5px; border-radius: .25rem; padding: .75rem 1rem; margin: 1rem 0; background: #FDECEC; color: var(--marino); }
+.callout-pending b:first-child { color: #B42318; }
+blockquote { background: #FCF5D9; border-left: 5px solid #F2D77A; border-radius: .25rem; padding: .75rem 1rem; margin: .75rem 0; }
+blockquote > :last-child { margin-bottom: 0; }
+
+/* Tablas: encabezado morado y filas alternas lila */
+.table { --bs-table-striped-bg: var(--lila-claro); --bs-table-hover-bg: #E8F6F4; }
+table.table > thead > tr > th, table.dataTable > thead > tr > th { background: var(--morado); color: #fff; }
+table.dataTable > tbody > tr:nth-child(even) > td { background: var(--lila-claro); }
+
+/* Indicadores del inicio */
+.bslib-value-box .value-box-value { color: var(--morado); font-weight: 700; }
+.bslib-value-box.destacado { background: #FCF5D9; }
+
+/* Pie */
+.pie { background: var(--lila-claro); border-top: 4px solid var(--morado); color: var(--marino); }
+table.dataTable > tbody > tr > * { box-shadow: none !important; }
+table.dataTable > tbody > tr:nth-child(odd) > td { background: #fff; }
+/* El hover va al final y con !important: si no, la regla de filas blancas (misma especificidad, más abajo) lo anulaba */
+table.dataTable > tbody > tr:hover > td { background: #E8F6F4 !important; }
+
+/* Paneles del inicio y tarjetas de lecciones: se elevan al pasar el mouse */
+.panel-seccion { display: block; color: inherit; text-decoration: none; }
+.panel-seccion .card, .leccion-card { transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; }
+.panel-seccion:hover .card, .leccion-card:hover {
+  transform: translateY(-4px);
+  border-color: #7F62B3;
+  box-shadow: 0 10px 24px rgba(20, 22, 77, .15), 0 0 18px rgba(127, 98, 179, .15);
+}
+.panel-seccion:hover strong { color: var(--turquesa); }
+.panel-seccion img { border-bottom: 1px solid var(--lila); }
+
+/* Palabras clave de cada lección */
+.claves { display: flex; flex-wrap: wrap; gap: .35rem; margin: .5rem 0; }
+.badge.clave { background: var(--lila-claro); color: var(--marino); border: 1px solid var(--lila); font-weight: 500; font-size: .8rem; }
+
+/* Figuras del Paso 1, centradas */
+.figura { text-align: center; }
+.figura img { width: 100%; max-width: 480px; display: block; margin: 0 auto .5rem; }
+
+/* Paginación de las tablas con los colores del tema (Flatly la pinta en verde) */
+.pagination {
+  --bs-pagination-color: #3D3F8F; --bs-pagination-bg: #fff; --bs-pagination-border-color: #DFE2FB;
+  --bs-pagination-hover-color: #fff; --bs-pagination-hover-bg: #7F62B3; --bs-pagination-hover-border-color: #7F62B3;
+  --bs-pagination-focus-color: #fff; --bs-pagination-focus-bg: #7F62B3; --bs-pagination-focus-box-shadow: 0 0 0 .2rem rgba(127, 98, 179, .25);
+  --bs-pagination-active-color: #fff; --bs-pagination-active-bg: #3D3F8F; --bs-pagination-active-border-color: #3D3F8F;
+  --bs-pagination-disabled-color: #9A9CC9; --bs-pagination-disabled-bg: #ECEEFE; --bs-pagination-disabled-border-color: #DFE2FB;
+}
+
+/* Leyenda de las pistas del heatmap */
+.chip { display: inline-block; width: .8rem; height: .8rem; border-radius: .15rem; vertical-align: middle; margin: 0 .15rem 0 .4rem; }
+
+/* Panel de ajustes de Expresión diferencial: ocupa todo el alto y acompaña al desplazarse */
+.panel-ajustes { height: 100%; overflow: visible !important; }   /* sin esto, position: sticky no funciona */
+.panel-ajustes .card-body { overflow: visible; }
+.ajustes-fijos { position: sticky; top: 1rem; max-height: calc(100vh - 2rem); overflow-y: auto; padding-right: .25rem; }
+.ajustes-fijos h5 { color: var(--morado); }
+
+/* Interpretación del volcano */
+.interpretacion { border-left: 5px solid #7F62B3; }
+.txt-up { color: firebrick; }
+.txt-down { color: #1874CD; }
+/* Diagrama mermaid sin el fondo gris de los bloques de código (como en lesson.css) */
+pre.mermaid { background: none; border: 0; text-align: center; margin-bottom: .25rem; }
