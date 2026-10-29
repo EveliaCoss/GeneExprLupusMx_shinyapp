@@ -82,3 +82,12 @@ table.dataTable > tbody > tr:hover > td { background: #E8F6F4 !important; }
 .txt-down { color: #1874CD; }
 /* Diagrama mermaid sin el fondo gris de los bloques de código (como en lesson.css) */
 pre.mermaid { background: none; border: 0; text-align: center; margin-bottom: .25rem; }
+
+/* Menú superior: pestañas compactas y el ícono de GitHub fijo en la esquina superior derecha */
+@media (min-width: 992px) {
+  .navbar .nav-underline { --bs-nav-underline-gap: .35rem; }   /* bslib separa las pestañas 1rem */
+  .navbar .nav-link { padding-left: .3rem !important; padding-right: .3rem !important; font-size: .95rem; }
+  .navbar > .container-fluid { padding-right: 3.5rem; }
+  .navbar a.github-link { position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); }
+}
+.navbar a.github-link:hover { color: #96D4CC !important; }

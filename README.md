@@ -56,3 +56,9 @@ Cita el **paquete** y los **datos**:
 ```sh
 Rscript tests/check.R
 ```
+
+## Licencia
+
+El código de esta app se distribuye bajo la licencia [MIT](LICENSE). Los datos que muestra provienen del
+artículo original y de Zenodo, ambos con licencia [CC BY](https://creativecommons.org/licenses/by/4.0/):
+si los usas, cita el artículo y el registro de Zenodo (ver la sección «Cómo citar»).

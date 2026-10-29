@@ -4,6 +4,7 @@
 LANG <- Sys.getenv("APP_LANG", "es")
 
 URL_PKG      <- "https://github.com/EveliaCoss/GeneExprLupusMx"
+URL_APP_REPO <- "https://github.com/EveliaCoss/GeneExprLupusMx_shinyapp"
 URL_SITE     <- "https://eveliacoss.github.io/GeneExprLupusMx"
 URL_ARTICULO <- "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1771959/full"
 URL_DOI      <- "https://doi.org/10.3389/fimmu.2026.1771959"
@@ -18,6 +19,7 @@ leccion_url <- function(id) sprintf("%s/articles/%s_%s.html", URL_SITE, id, LANG
 
 TXT <- list(es = list(
   titulo = "GeneExprLupusMx · Explorador",
+  github_app = "Código de esta app en GitHub",
   tab_inicio = "1. Inicio",
   tab_participantes = "2. Participantes",
   tab_exploracion = "3. Exploración",

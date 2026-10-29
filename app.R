@@ -441,7 +441,12 @@ ui <- page_navbar(
         div(
           tags$blockquote(class = "mt-0", HTML(tr("cita_paquete"))),
           div(class = "callout-pending mb-0", HTML(tr("cita_pendiente"))))))
-  )
+  ),
+
+  # Enlace al repositorio de la app, a la derecha del menú
+  nav_spacer(),
+  nav_item(tags$a(href = URL_APP_REPO, target = "_blank", class = "nav-link github-link", title = tr("github_app"),
+                  `aria-label` = tr("github_app"), icon("github", class = "fa-lg")))
 )
 
 # ---- Server ---------------------------------------------------------------
