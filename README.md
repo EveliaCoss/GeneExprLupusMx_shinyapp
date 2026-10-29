@@ -52,6 +52,7 @@ La app muestra los **objetos ya calculados** que distribuye el paquete (`de_resu
 | 5. Funciones biológicas | *Manhattan plot* de todos los términos de g:Profiler por base de datos; *dot plot* de los más significativos; *heatmap* de términos compartidos entre listas; tabla y descargas | [Lección 4](https://eveliacoss.github.io/GeneExprLupusMx/articles/l4_GOterms_es.html), [5](https://eveliacoss.github.io/GeneExprLupusMx/articles/l5_DEGs_monocytes_diff_es.html) y [7](https://eveliacoss.github.io/GeneExprLupusMx/articles/l7_DEGs_between_groups_es.html) |
 | 6. Descarga de los datos | Descargar cualquier tabla del paquete en CSV; origen, licencias y cómo citar los datos | [Guía de descarga](https://eveliacoss.github.io/GeneExprLupusMx/articles/download_es.html) |
 | 7. Aprende a hacer estos análisis | Las 7 lecciones con sus temas, las funciones del paquete y cómo instalarlo y citarlo | [Sitio del paquete](https://eveliacoss.github.io/GeneExprLupusMx/) |
+| 8. Sobre la autora | Quién está detrás de GeneExprLupusMx y cómo contactarla | [eveliacoss.github.io](https://eveliacoss.github.io/) |
 
 ![Sección de expresión diferencial](img/captura_deg.png)
 
@@ -89,8 +90,10 @@ Los objetos pesados (`filtered_txi`, `zscore_mat`) solo se cargan cuando se nece
 | `datos/pca.rds` | PCA precalculados de la lección 2 (≈800 KB) |
 | `tools/` | Scripts para regenerar `datos/pca.rds` y las imágenes de `www/` (requieren DESeq2 y magick; la app no) |
 | `tests/check.R` | Verificación rápida de la lógica de la app |
-| `img/` | Capturas de este README |
+| `img/` | Imágenes de este README e ilustraciones originales |
 | `rsconnect/`, `.rscignore` | Registro de la publicación en shinyapps.io y archivos que no se publican |
+| `.zenodo.json` | Metadatos para el archivo en Zenodo (autoría, licencia, palabras clave y relación con el artículo, los datos y el paquete) |
+| `LICENSE` | Licencia MIT |
 
 ### Regenerar datos e imágenes
 

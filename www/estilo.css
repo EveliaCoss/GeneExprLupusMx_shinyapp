@@ -85,9 +85,35 @@ pre.mermaid { background: none; border: 0; text-align: center; margin-bottom: .2
 
 /* Menú superior: pestañas compactas y el ícono de GitHub fijo en la esquina superior derecha */
 @media (min-width: 992px) {
-  .navbar .nav-underline { --bs-nav-underline-gap: .35rem; }   /* bslib separa las pestañas 1rem */
-  .navbar .nav-link { padding-left: .3rem !important; padding-right: .3rem !important; font-size: .95rem; }
+  .navbar .navbar-brand { font-size: 1.1rem; margin-right: .5rem; }
+  .navbar .nav-underline { --bs-nav-underline-gap: .15rem; }   /* bslib separa las pestañas 1rem */
+  .navbar .nav-link { padding-left: .25rem !important; padding-right: .25rem !important; font-size: .88rem; }
   .navbar > .container-fluid { padding-right: 3.5rem; }
   .navbar a.github-link { position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); }
 }
 .navbar a.github-link:hover { color: #96D4CC !important; }
+
+/* Chibi leyendo, debajo del Paso 3 */
+.chibi-inicio { display: block; width: 80%; max-width: 380px; margin: .5rem auto 0; }
+
+/* Chibi del Inicio: lleva a "Sobre la autora" y muestra un mensaje al pasar el mouse */
+.chibi-link { position: relative; display: block; text-decoration: none; }
+.chibi-link .chibi-inicio { transition: transform .2s ease, filter .2s ease; }
+.chibi-link:hover .chibi-inicio, .chibi-link:focus .chibi-inicio { transform: scale(1.04); filter: drop-shadow(0 6px 12px rgba(61, 63, 143, .25)); }
+.chibi-hover {
+  position: absolute; left: 50%; top: 0; transform: translate(-50%, -20%);
+  background: #3D3F8F; color: #fff; font-weight: 600; font-size: .9rem; white-space: nowrap;
+  padding: .35rem .8rem; border-radius: 2rem; box-shadow: 0 4px 12px rgba(20, 22, 77, .25);
+  opacity: 0; transition: opacity .2s ease, transform .2s ease; pointer-events: none;
+}
+.chibi-link:hover .chibi-hover, .chibi-link:focus .chibi-hover { opacity: 1; transform: translate(-50%, 0); }
+
+/* Foto en "Sobre la autora" */
+.foto-autora { width: 100%; max-width: 300px; border-radius: 1rem; border: 4px solid #DFE2FB; box-shadow: 0 10px 24px rgba(20, 22, 77, .15); }
+
+/* Chibi con corazón junto a "Comunidad": mensaje de agradecimiento al pasar el mouse */
+.chibi-love { position: relative; text-align: center; padding-top: 2.2rem; }
+.chibi-love img { width: 100%; max-width: 230px; transition: transform .2s ease, filter .2s ease; }
+.chibi-love:hover img { transform: scale(1.05) rotate(-2deg); filter: drop-shadow(0 6px 12px rgba(224, 82, 82, .25)); }
+.chibi-love .chibi-hover { background: #E05252; }
+.chibi-love:hover .chibi-hover { opacity: 1; transform: translate(-50%, 0); }

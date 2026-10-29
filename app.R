@@ -205,7 +205,8 @@ ui <- page_navbar(
   lang = LANG,
   footer = div(class = "pie small text-center p-3 mt-4", HTML(tr("pie"))),
 
-  nav_panel(tr("tab_inicio"), value = "inicio",
+  # Inicio con el ícono de casita; el texto queda oculto para lectores de pantalla
+  nav_panel(tags$span(title = tr("tab_inicio"), icon("house"), span(class = "visually-hidden", tr("tab_inicio"))), value = "inicio",
     h3(tr("inicio_bienvenida")), HTML(tr("inicio_intro")),
     do.call(layout_column_wrap, c(list(width = "180px", class = "mb-3"), unname(lapply(names(ESTADISTICAS), caja_valor)))),
     card(card_header(tr("inicio_estudio_t")),
@@ -216,7 +217,11 @@ ui <- page_navbar(
       )),
     layout_columns(col_widths = c(7, 5),
       card(card_header(tr("inicio_datos_t")), HTML(tr("inicio_datos"))),
-      card(card_header(tr("inicio_ruta_t")), HTML(tr("inicio_ruta")))
+      card(card_header(tr("inicio_ruta_t")), HTML(tr("inicio_ruta")),
+           tags$a(href = "#", class = "chibi-link", title = tr("autora_hover"),
+                  onclick = "Shiny.setInputValue('ir_a', 'autora', {priority: 'event'}); window.scrollTo(0, 0); return false;",
+                  img(src = "chibi_reading.png", alt = tr("chibi_alt"), class = "chibi-inicio"),
+                  span(class = "chibi-hover", icon("hand-pointer"), " ", tr("autora_hover"))))
     ),
     h4(tr("sec_t")), p(class = "text-muted", tr("sec_intro")),
     do.call(layout_column_wrap, c(list(width = 1/3, class = "mb-3"),
@@ -441,6 +446,37 @@ ui <- page_navbar(
         div(
           tags$blockquote(class = "mt-0", HTML(tr("cita_paquete"))),
           div(class = "callout-pending mb-0", HTML(tr("cita_pendiente"))))))
+  ),
+
+  nav_panel(tr("tab_autora"), value = "autora",
+    h3(tr("autora_t")),
+    card(
+      layout_columns(col_widths = c(4, 8),
+        div(class = "text-center",
+          img(src = "foto_autora.jpg", alt = tr("foto_alt"), class = "foto-autora"),
+          h4(class = "mt-3 mb-0", "Evelia Coss"),
+          p(class = "text-muted", tr("autora_puesto")),
+          div(class = "d-flex flex-wrap justify-content-center gap-2",
+            lapply(list(
+              list("house", tr("autora_web"), "https://eveliacoss.github.io/"),
+              list("github", "GitHub", "https://github.com/EveliaCoss/"),
+              list("orcid", "ORCID", "https://orcid.org/0000-0002-7087-2977"),
+              list("linkedin", "LinkedIn", "https://www.linkedin.com/in/evelia-lorena-coss-navarrete-562226229/"),
+              list("file-lines", "CV", "https://eveliacoss.github.io/CV/cv_ECoss.html")),
+              function(l) tags$a(class = "btn btn-outline-primary btn-sm", href = l[[3]], target = "_blank", icon(l[[1]]), " ", l[[2]])))
+        ),
+        # la biografía se parte en "Comunidad" para poner la chibi con corazón a un lado
+        local({
+          partes <- strsplit(tr("autora_bio"), "<h5>Comunidad</h5>", fixed = TRUE)[[1]]
+          div(HTML(partes[1]),
+              layout_columns(col_widths = c(8, 4),
+                div(HTML(paste0("<h5>Comunidad</h5>", partes[2]))),
+                div(class = "chibi-love", title = tr("gracias_hover"),
+                    img(src = "chibi_love.png", alt = tr("chibi_love_alt")),
+                    span(class = "chibi-hover", icon("heart"), " ", tr("gracias_hover")))))
+        })
+      )
+    )
   ),
 
   # Enlace al repositorio de la app, a la derecha del menú

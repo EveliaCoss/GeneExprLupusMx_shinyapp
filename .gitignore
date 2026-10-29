@@ -3,3 +3,6 @@
 .RData
 .Ruserdata
 .DS_Store
+
+# Foto original con metadatos de cámara; la app usa www/foto_autora.jpg (sin metadatos)
+img/IMG_6961.jpg

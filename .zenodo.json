@@ -1,0 +1,48 @@
+{
+  "title": "GeneExprLupusMx Explorador: aplicación Shiny para explorar la transcriptómica de lupus en mujeres mexicanas",
+  "upload_type": "software",
+  "description": "<p>Aplicación Shiny interactiva y educativa para explorar los resultados del artículo <i>Gene expression profiling of dendritic cell tolerance dysfunction in women with systemic lupus erythematosus</i> (Hernández-Ledesma, Coss-Navarrete <i>et al.</i>, Front. Immunol. 2026, 17:1771959), con los datos públicos del paquete de R <a href=\"https://github.com/EveliaCoss/GeneExprLupusMx\">GeneExprLupusMx</a>: perfiles de RNA-seq de monocitos, moDC y tolDC de 33 mujeres mexicanas (10 controles sanas y 23 pacientes con lupus; 99 muestras).</p><p>Incluye la descripción de las participantes, PCA y heatmaps, expresión diferencial (SLE vs Ctrl, diferenciación y efecto de interacción del SLE) con volcano plots e interpretaciones, enriquecimiento funcional (g:Profiler), descarga de los datos en CSV y enlaces a las lecciones bilingües del paquete que enseñan a reproducir cada gráfica.</p><p>App en línea: <a href=\"https://eveliacossnav.shinyapps.io/GeneExprLupusMx_shinyapp/\">https://eveliacossnav.shinyapps.io/GeneExprLupusMx_shinyapp/</a></p><p>Los datos provienen del artículo original y del análisis depositado en Zenodo (doi:10.5281/zenodo.17742206), ambos con licencia CC BY; si los usas, cítalos.</p>",
+  "creators": [
+    {
+      "name": "Coss-Navarrete, Evelia Lorena",
+      "orcid": "0000-0002-7087-2977"
+    }
+  ],
+  "license": "MIT",
+  "language": "spa",
+  "keywords": [
+    "Shiny",
+    "R",
+    "lupus",
+    "systemic lupus erythematosus",
+    "transcriptomics",
+    "RNA-seq",
+    "dendritic cells",
+    "tolerogenic dendritic cells",
+    "differential expression",
+    "education",
+    "open science",
+    "bilingual",
+    "Mexico"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.3389/fimmu.2026.1771959",
+      "relation": "isSupplementTo",
+      "scheme": "doi",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.5281/zenodo.17742206",
+      "relation": "isDerivedFrom",
+      "scheme": "doi",
+      "resource_type": "dataset"
+    },
+    {
+      "identifier": "https://github.com/EveliaCoss/GeneExprLupusMx",
+      "relation": "requires",
+      "scheme": "url",
+      "resource_type": "software"
+    }
+  ]
+}
