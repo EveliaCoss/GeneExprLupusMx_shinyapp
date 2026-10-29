@@ -9,7 +9,7 @@ Cada gráfica enlaza a la [lección del paquete](https://eveliacoss.github.io/Ge
 
 <p align="center">
   <a href="https://eveliacossnav.shinyapps.io/GeneExprLupusMx_shinyapp/">
-    <img src="img/invitacion_shinyapp.png" alt="¡Explora la Shiny app GeneExprLupusMx! Conoce a las participantes, explora las 99 muestras, descubre qué genes cambian, funciones biológicas, descarga los datos y aprende con las lecciones" width="420">
+    <img src="img/portada.png" alt="¡Explora la Shiny app GeneExprLupusMx! Conoce a las participantes, explora las 99 muestras, descubre qué genes cambian, funciones biológicas, descarga los datos y aprende con las lecciones" width="420">
   </a>
 </p>
 
