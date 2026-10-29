@@ -1,5 +1,8 @@
 # GeneExprLupusMx · Explorador (Shiny)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23751397.svg)](https://doi.org/10.5281/zenodo.23751397)
+[![License: MIT](https://img.shields.io/badge/License-MIT-3D3F8F.svg)](LICENSE)
+
 Aplicación Shiny para explorar de forma interactiva los resultados del artículo
 [Hernández-Ledesma, Coss-Navarrete *et al.* (2026) *Front. Immunol.* 17:1771959](https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1771959/full),
 con los datos del paquete de R [`GeneExprLupusMx`](https://github.com/EveliaCoss/GeneExprLupusMx).
@@ -139,11 +142,15 @@ Si usas los datos o resultados, **cítalos con base en el artículo original** y
 
 > Coss-Navarrete EL, Hernández-Ledesma AL, *et al* (2025) Analysis of gene expression profiles during tolerance induction in dendritic cells from women with Systemic Lupus Erythematosus [Data set]. *Zenodo*. doi: [10.5281/zenodo.17742206](https://doi.org/10.5281/zenodo.17742206).
 
+Si usas esta app:
+
+> Coss E (2026) *GeneExprLupusMx Explorador: aplicación Shiny para explorar la transcriptómica de lupus en mujeres mexicanas*. Zenodo. doi: [10.5281/zenodo.23751397](https://doi.org/10.5281/zenodo.23751397).
+
 Si además usas el paquete o sus lecciones:
 
-> Coss E (2026) *GeneExprLupusMx: Datos transcriptómicos de lupus en mujeres mexicanas con lecciones de aprendizaje*. Paquete de R. <https://github.com/EveliaCoss/GeneExprLupusMx>.
+> Coss E (2026) *GeneExprLupusMx: Datos transcriptómicos de lupus en mujeres mexicanas con lecciones de aprendizaje*. Paquete de R. doi: [10.5281/zenodo.23751369](https://doi.org/10.5281/zenodo.23751369). <https://github.com/EveliaCoss/GeneExprLupusMx>.
 
-**Pendiente:** el DOI de Zenodo del paquete y el de esta app se agregarán próximamente.
+Estos DOI siempre apuntan a la versión más reciente; en Zenodo encontrarás el DOI de cada versión.
 
 ## Licencia
 
