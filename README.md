@@ -1,5 +1,3 @@
-<img src="assets/icon.svg" width="64" height="64" alt="">
-
 # GeneExprLupusMx · Explorador (Shiny)
 
 Aplicación Shiny para explorar de forma interactiva los resultados del artículo
