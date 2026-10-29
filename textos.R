@@ -9,7 +9,8 @@ URL_SITE     <- "https://eveliacoss.github.io/GeneExprLupusMx"
 URL_ARTICULO <- "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1771959/full"
 URL_DOI      <- "https://doi.org/10.3389/fimmu.2026.1771959"
 URL_ZENODO   <- "https://doi.org/10.5281/zenodo.17742206"
-URL_CODIGO   <- "https://github.com/NeuroGenomicsMX/SLE_Transcriptomic_analysis_tolerogenic"
+URL_PKG_DOI  <- "https://doi.org/10.5281/zenodo.23751369"  # DOI general del paquete (todas las versiones)
+URL_APP_DOI  <- "https://doi.org/10.5281/zenodo.23751397"  # DOI general de esta app (todas las versiones)
 
 # Figuras del sitio del paquete (se actualizan junto con el paquete)
 img_url <- function(f) sprintf("%s/articles/img/%s", URL_SITE, f)
@@ -87,11 +88,11 @@ TXT <- list(es = list(
   inicio_datos_t = "Paso 2 · ¿De dónde vienen los datos?",
   inicio_datos = paste0(
     "<p>Los datos provienen del estudio publicado en <b>2026</b> en <i>Frontiers in Immunology</i> ",
-    "(Hernández-Ledesma, Coss-Navarrete <i>et al.</i>, 17:1771959) y se obtuvieron de tres fuentes:</p>",
+    "(Hernández-Ledesma, Coss-Navarrete <i>et al.</i>, 17:1771959). Los datos y el código se obtuvieron de dos fuentes:</p>",
     "<ul><li><a href='", URL_ARTICULO, "' target='_blank'><b>Artículo original (2026)</b></a>: diseño del estudio, métodos, figuras y material suplementario.</li>",
-    "<li><a href='", URL_ZENODO, "' target='_blank'><b>Zenodo, registro 17742206 (2025)</b></a>: análisis depositado por las autoras; ",
-    "cuantificación con nf-core/rnaseq (<b>Salmon</b>) y análisis con <b>tximport</b> y <b>DESeq2</b>.</li>",
-    "<li><a href='", URL_CODIGO, "' target='_blank'><i class='fab fa-github' role='img' aria-label='GitHub'></i> <b>SLE_Transcriptomic_analysis_tolerogenic</b></a>: código del análisis original y sus figuras.</li></ul>",
+    "<li><a href='", URL_ZENODO, "' target='_blank'><b>Zenodo, registro 17742206 (2025)</b></a>: datos y código del análisis depositados por las autoras; ",
+    "cuantificación con nf-core/rnaseq (<b>Salmon</b>) y análisis con <b>tximport</b> y <b>DESeq2</b>.</li></ul>",
+    "<p>Si usas los datos, cita ambas fuentes (ver <b>Cómo citar los datos</b>).</p>",
     "<p>El paquete <code>GeneExprLupusMx</code> reorganiza estas fuentes en objetos de R listos para usar ",
     "(cuentas en <code>filtered_txi</code>, expresión diferencial con DESeq2 en <code>de_results</code>, enriquecimiento con g:Profiler ",
     "<code>e113_eg59_p19</code> en <code>go_results</code>…). La app muestra esos <b>objetos ya calculados</b>; no recalcula los análisis. ",
@@ -430,9 +431,10 @@ TXT <- list(es = list(
   dl_cita_datos_t = "Cómo citar los datos (artículo y Zenodo)",
   dl_cita_paquete_t = "Si además usas el paquete o sus lecciones",
   dl_citar_aviso = paste0(
-    "<b>Importante:</b> si usas estos datos o resultados, <b>cítalos con base en el artículo original</b> ",
-    "(Hernández-Ledesma, Coss-Navarrete <i>et al.</i>, 2026, <i>Front. Immunol.</i> 17:1771959) y el análisis depositado en Zenodo. ",
-    "Si además usas el paquete o sus lecciones, cita también <code>GeneExprLupusMx</code>."
+    "<b>Importante:</b> los datos y el código del análisis provienen del artículo original ",
+    "(Hernández-Ledesma, Coss-Navarrete <i>et al.</i>, 2026, <i>Front. Immunol.</i> 17:1771959) y del análisis depositado en Zenodo. ",
+    "Si usas los datos, el código o los resultados, <b>cita ambas fuentes</b>. ",
+    "Si además usas el paquete, sus lecciones o esta app, cítalos también (ver abajo)."
   ),
   dl_origen_tabla = paste0(
     "<table class='table table-sm'><thead><tr><th>Fuente</th><th>¿Qué contiene?</th><th>Licencia</th></tr></thead><tbody>",
@@ -440,11 +442,8 @@ TXT <- list(es = list(
     "<td>Diseño del estudio, métodos, figuras y material suplementario (incluidos los identificadores de EGA).</td>",
     "<td><a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC BY</a> (acceso abierto)</td></tr>",
     "<tr><td><a href='", URL_ZENODO, "' target='_blank'>Zenodo, registro 17742206</a></td>",
-    "<td>Análisis de expresión génica depositado por las autoras: cuantificación con nf-core/rnaseq (Salmon) y análisis con tximport y DESeq2.</td>",
+    "<td>Datos y código del análisis de expresión génica depositados por las autoras: cuantificación con nf-core/rnaseq (Salmon) y análisis con tximport y DESeq2.</td>",
     "<td><a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC BY 4.0</a></td></tr>",
-    "<tr><td><a href='", URL_CODIGO, "' target='_blank'><i class='fab fa-github'></i> SLE_Transcriptomic_analysis_tolerogenic</a></td>",
-    "<td>Código del análisis original y sus figuras.</td>",
-    "<td>Sin licencia declarada en el repositorio</td></tr>",
     "<tr><td><a href='", URL_PKG, "' target='_blank'><i class='fab fa-github'></i> GeneExprLupusMx</a></td>",
     "<td>Paquete de R: los datos reorganizados en objetos de R, las lecciones y las funciones.</td>",
     "<td>MIT</td></tr>",
@@ -455,7 +454,6 @@ TXT <- list(es = list(
   ),
   dl_licencia_nota = paste0(
     "CC BY permite usar, distribuir y adaptar el material siempre que se dé crédito a las autoras y se cite la publicación original. ",
-    "El repositorio de código no declara una licencia; para reutilizar ese código, consulta a las autoras. ",
     "Licencias verificadas en el artículo, en Zenodo y en el paquete (octubre de 2026)."
   ),
 
@@ -469,8 +467,13 @@ TXT <- list(es = list(
   cita_txt = "Hay dos citas: una para el <b>paquete</b> y otra para los <b>datos</b>. Si usas este recurso, por favor incluye ambas.",
   cita_paquete_t = "1) El paquete (lecciones, funciones y objetos de R)",
   cita_paquete = paste0("Coss E (2026) <i>GeneExprLupusMx: Datos transcriptómicos de lupus en mujeres mexicanas con lecciones de aprendizaje</i>. ",
-                        "Paquete de R. <a href='", URL_PKG, "' target='_blank'>", URL_PKG, "</a>."),
-  cita_pendiente = "<b>Pendiente:</b> el DOI de Zenodo del paquete se agregará próximamente; mientras tanto, cita el repositorio de GitHub y la versión que usaste (<code>packageVersion(\"GeneExprLupusMx\")</code>). En R, <code>citation(\"GeneExprLupusMx\")</code> muestra la cita.",
+                        "Paquete de R. <a href='", URL_PKG_DOI, "' target='_blank'>doi: 10.5281/zenodo.23751369</a>. ",
+                        "<a href='", URL_PKG, "' target='_blank'>", URL_PKG, "</a>."),
+  cita_app_t = "Si usas esta app",
+  cita_app_ref = paste0("Coss E (2026) <i>GeneExprLupusMx Explorador: aplicación Shiny para explorar la transcriptómica de lupus en mujeres mexicanas</i>. ",
+                        "Zenodo. <a href='", URL_APP_DOI, "' target='_blank'>doi: 10.5281/zenodo.23751397</a>."),
+  cita_nota = paste0("Estos DOI siempre apuntan a la versión más reciente; en <a href='", URL_PKG_DOI, "' target='_blank'>Zenodo</a> ",
+                     "encontrarás el DOI de cada versión. En R, <code>citation(\"GeneExprLupusMx\")</code> muestra la cita del paquete."),
   cita_datos_t = "2) Los datos (artículo original y análisis en Zenodo)",
   cita_articulo = paste0("Hernández-Ledesma AL, Coss-Navarrete EL, <i>et al</i> (2026) <a href='", URL_ARTICULO, "' target='_blank'>Gene expression profiling of dendritic cell ",
                          "tolerance dysfunction in women with systemic lupus erythematosus</a>. <i>Front. Immunol.</i> 17:1771959. ",
@@ -478,7 +481,6 @@ TXT <- list(es = list(
   cita_zenodo = paste0("Coss-Navarrete EL, Hernández-Ledesma AL, <i>et al</i> (2025) <a href='", URL_ZENODO, "' target='_blank'>Analysis of gene expression profiles during ",
                        "tolerance induction in dendritic cells from women with Systemic Lupus Erythematosus</a> [Data set]. <i>Zenodo</i>. ",
                        "<a href='", URL_ZENODO, "' target='_blank'>doi: 10.5281/zenodo.17742206</a>."),
-  cita_codigo = paste0("Código del análisis original: <a href='", URL_CODIGO, "' target='_blank'>NeuroGenomicsMX/SLE_Transcriptomic_analysis_tolerogenic</a>."),
   cita_app = "Esta aplicación es un complemento interactivo del paquete; los resultados son los del artículo original.",
   lecciones_titulo = c("1 · Conociendo a las participantes",
                        "2 · De las cuentas de RNA-seq a la exploración de datos",
@@ -489,7 +491,7 @@ TXT <- list(es = list(
                        "7 · ¿Se diferencian igual las células de pacientes y controles?"),
   lecciones_figura = c("Figura S3", "PCA y heatmaps", "Figura 2", "Figuras 3 y S4", "Figuras 4 y 5", "Figura 6", "Figura 7"),
   funciones_t = "Cómo usar las funciones del paquete",
-  funciones_txt = "Heatmaps con create_heatmap() y get_heatmap_mat(), y reducción de términos GO con processGO() y Reduce_GOTerm().",
+  funciones_txt = "Heatmaps con create_heatmap() y get_heatmap_mat(), y reducción de términos GO con process_go() y reduce_go_terms().",
   lecciones_claves = list(
     c("estadística descriptiva", "Tabla 1", "frecuencias", "histograma y densidad", "Q–Q y Shapiro–Wilk", "prueba t, Wilcoxon y Fisher"),
     c("tximport", "DESeqDataSet", "filtrado de genes", "normalización", "VST", "heatmap de z-scores", "PCA"),
@@ -499,7 +501,7 @@ TXT <- list(es = list(
     c("firma tolDC (Robertson 2021)", "heatmaps de expresión y LFC", "biotipos PCG y lncRNA", "nivel de referencia"),
     c("modelo con interacción", "Group:Cell_type", "diferencia de diferencias", "genes compartidos y exclusivos", "procesos de Reactome")
   ),
-  funciones_claves = c("create_heatmap()", "get_heatmap_mat()", "processGO()", "Reduce_GOTerm()", "rrvgo")
+  funciones_claves = c("create_heatmap()", "get_heatmap_mat()", "process_go()", "reduce_go_terms()", "rrvgo")
 ))
 
 tr <- function(key) {

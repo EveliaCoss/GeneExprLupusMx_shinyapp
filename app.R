@@ -412,7 +412,9 @@ ui <- page_navbar(
       HTML(tr("dl_origen_tabla")),
       p(class = "small text-muted", HTML(tr("dl_licencia_nota"))),
       h5(tr("dl_cita_datos_t")), tags$blockquote(HTML(tr("cita_articulo"))), tags$blockquote(HTML(tr("cita_zenodo"))),
-      h5(tr("dl_cita_paquete_t")), tags$blockquote(HTML(tr("cita_paquete"))))
+      h5(tr("dl_cita_paquete_t")), tags$blockquote(HTML(tr("cita_paquete"))),
+      h5(tr("cita_app_t")), tags$blockquote(HTML(tr("cita_app_ref"))),
+      p(class = "small text-muted", HTML(tr("cita_nota"))))
   ),
 
   nav_panel(tr("tab_aprende"), value = "aprende",
@@ -429,7 +431,7 @@ ui <- page_navbar(
       card(class = "leccion-card",
         card_header(a(href = leccion_url("functions"), target = "_blank", tr("funciones_t"))),
         p(tr("funciones_txt")), claves(tr("funciones_claves")),
-        pre(class = "mb-0", "library(GeneExprLupusMx)\n?create_heatmap\n?Reduce_GOTerm")),
+        pre(class = "mb-0", "library(GeneExprLupusMx)\n?create_heatmap\n?reduce_go_terms")),
       card(card_header(tr("aprende_instalar")), instalar_ui())
     ))),
     # Visitar y citar el paquete (las citas de los datos están en "Descarga de los datos")
@@ -445,7 +447,7 @@ ui <- page_navbar(
               tr("tab_descargas")), ".")),
         div(
           tags$blockquote(class = "mt-0", HTML(tr("cita_paquete"))),
-          div(class = "callout-pending mb-0", HTML(tr("cita_pendiente"))))))
+          p(class = "small text-muted mb-0", HTML(tr("cita_nota"))))))
   ),
 
   nav_panel(tr("tab_autora"), value = "autora",

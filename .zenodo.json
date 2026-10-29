@@ -39,9 +39,9 @@
       "resource_type": "dataset"
     },
     {
-      "identifier": "https://github.com/EveliaCoss/GeneExprLupusMx",
+      "identifier": "10.5281/zenodo.23751369",
       "relation": "requires",
-      "scheme": "url",
+      "scheme": "doi",
       "resource_type": "software"
     }
   ]

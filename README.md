@@ -39,8 +39,7 @@ La app muestra los **objetos ya calculados** que distribuye el paquete (`de_resu
 | Fuente | ¿Qué contiene? | Licencia |
 |--------|----------------|----------|
 | [Artículo original](https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1771959/full) (*Front. Immunol.* 2026) | Diseño del estudio, métodos, figuras y material suplementario | CC BY |
-| [Zenodo, registro 17742206](https://doi.org/10.5281/zenodo.17742206) (2025) | Análisis depositado por las autoras: nf-core/rnaseq (Salmon), tximport y DESeq2 | CC BY 4.0 |
-| [SLE_Transcriptomic_analysis_tolerogenic](https://github.com/NeuroGenomicsMX/SLE_Transcriptomic_analysis_tolerogenic) | Código del análisis original y sus figuras | Sin licencia declarada |
+| [Zenodo, registro 17742206](https://doi.org/10.5281/zenodo.17742206) (2025) | Datos y código del análisis depositados por las autoras: nf-core/rnaseq (Salmon), tximport y DESeq2 | CC BY 4.0 |
 | [GeneExprLupusMx](https://github.com/EveliaCoss/GeneExprLupusMx) | Los datos reorganizados en objetos de R, lecciones y funciones | MIT |
 | European Genome-phenome Archive (EGA) | Datos crudos (FASTQ); identificadores en la Tabla suplementaria 2 del artículo | Acceso controlado |
 
@@ -136,7 +135,7 @@ automáticamente a la versión `_en`.
 
 ## Cómo citar
 
-Si usas los datos o resultados, **cítalos con base en el artículo original** y el análisis depositado en Zenodo:
+Los datos y el código del análisis provienen del artículo original y del análisis depositado en Zenodo. Si usas los datos, el código o los resultados, **cita ambas fuentes**:
 
 > Hernández-Ledesma AL, Coss-Navarrete EL, *et al* (2026) Gene expression profiling of dendritic cell tolerance dysfunction in women with systemic lupus erythematosus. *Front. Immunol.* 17:1771959. doi: [10.3389/fimmu.2026.1771959](https://doi.org/10.3389/fimmu.2026.1771959).
 
