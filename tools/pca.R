@@ -2,11 +2,9 @@
 # vst(dds, blind = FALSE) y prcomp() sin escalar, como calc_pca() de la lección.
 # Uno por cada combinación de tipos celulares y por cada número de genes: todos (como en la lección)
 # o los 500, 250 y 100 más variables dentro de esas muestras (como DESeq2::plotPCA()).
-# Uso (desde la raíz de la app): Rscript tools/pca.R [ruta_al_paquete]
+# Uso (desde la raíz de la app): Rscript tools/pca.R
 suppressMessages(library(DESeq2))
-pkg <- commandArgs(TRUE)[1]
-if (is.na(pkg)) pkg <- "~/Documents/GeneExprLupusMx"
-load(file.path(pkg, "data", "dds.rda"))
+dds <- GeneExprLupusMx::download_data("dds") # dds ya no viene en data/ del paquete
 
 vsd <- assay(vst(dds, blind = FALSE))
 tipos <- c("monocyte", "moDC", "tolDC")

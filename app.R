@@ -10,8 +10,11 @@ source("textos.R", encoding = "UTF-8")
 # ---- Datos ----------------------------------------------------------------
 # Orden: 1) carpeta en GENEEXPRLUPUSMX_DATA (útil si el paquete instalado está
 # desactualizado), 2) paquete instalado, 3) copia local del paquete en desarrollo.
+# Desde la versión 0.1.0.9000 del paquete, los objetos grandes no vienen en data/:
+# se obtienen con download_data(), que los descarga la primera vez y guarda una copia.
 DATA_DIR <- Sys.getenv("GENEEXPRLUPUSMX_DATA", "")
 DATA_LOCAL <- "~/Documents/GeneExprLupusMx/data"
+GRANDES <- c("filtered_txi", "dds", "zscore_mat")
 
 .cache <- new.env()
 obj <- function(name) {
@@ -20,7 +23,11 @@ obj <- function(name) {
     if (nzchar(DATA_DIR)) {
       load(file.path(DATA_DIR, paste0(name, ".rda")), envir = e)
     } else if (requireNamespace("GeneExprLupusMx", quietly = TRUE)) {
-      data(list = name, package = "GeneExprLupusMx", envir = e)
+      if (name %in% GRANDES && exists("download_data", asNamespace("GeneExprLupusMx"))) {
+        e[[name]] <- GeneExprLupusMx::download_data(name)
+      } else {
+        data(list = name, package = "GeneExprLupusMx", envir = e)
+      }
     } else {
       load(file.path(DATA_LOCAL, paste0(name, ".rda")), envir = e)
     }
