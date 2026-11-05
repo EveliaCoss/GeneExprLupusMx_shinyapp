@@ -200,11 +200,18 @@ claves <- function(x) div(class = "claves", lapply(x, function(k) span(class = "
 # ---- UI -------------------------------------------------------------------
 ui <- page_navbar(
   id = "nav",
-  title = tr("titulo"),
+  # el título lleva a Inicio, como el ícono de la casita
+  title = tags$a(href = "#", class = "navbar-brand-link", tr("titulo"),
+                 onclick = "Shiny.setInputValue('ir_a', 'inicio', {priority: 'event'}); window.scrollTo(0, 0); return false;"),
   theme = TEMA,
   navbar_options = navbar_options(bg = "#3D3F8F", theme = "dark"),
   header = tags$head(
     tags$link(rel = "stylesheet", href = "estilo.css"),
+    # el mismo favicon que la página del paquete
+    tags$link(rel = "icon", type = "image/png", sizes = "96x96", href = "favicon-96x96.png"),
+    tags$link(rel = "icon", type = "image/svg+xml", href = "favicon.svg"),
+    tags$link(rel = "icon", sizes = "any", href = "favicon.ico"),
+    tags$link(rel = "apple-touch-icon", sizes = "180x180", href = "apple-touch-icon.png"),
     # Mermaid, como en las lecciones del paquete (diagramas de la interpretación del volcano)
     tags$script(type = "module", HTML('import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
       mermaid.initialize({ startOnLoad: false, themeVariables: { fontSize: "15px" } }); window.mermaid = mermaid;'))),
