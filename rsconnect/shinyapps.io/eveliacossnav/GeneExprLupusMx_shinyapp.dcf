@@ -5,6 +5,6 @@ account: eveliacossnav
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 18309538
-bundleId: 12783984
+bundleId: 12784007
 url: https://eveliacossnav.shinyapps.io/GeneExprLupusMx_shinyapp/
 version: 1

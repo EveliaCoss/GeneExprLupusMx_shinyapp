@@ -19,6 +19,7 @@ TXT <- list(es = list(
   titulo = "GeneExprLupusMx · Explorador",
   github_app = "Código de esta app en GitHub",
   tab_inicio = "Inicio",
+  logo_alt = "Logo de GeneExprLupusMx",
   chibi_alt = "Ilustración chibi de Evelia Coss leyendo un libro",
   foto_alt = "Fotografía de Evelia Coss",
   chibi_love_alt = "Ilustración chibi de Evelia Coss abrazando un corazón",

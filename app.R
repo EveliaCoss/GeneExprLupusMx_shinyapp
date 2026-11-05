@@ -201,7 +201,7 @@ claves <- function(x) div(class = "claves", lapply(x, function(k) span(class = "
 ui <- page_navbar(
   id = "nav",
   # el título lleva a Inicio, como el ícono de la casita
-  title = tags$a(href = "#", class = "navbar-brand-link", tr("titulo"),
+  title = tags$a(href = "#", class = "navbar-brand-link", img(src = "logo.png", alt = "", class = "logo-nav"), tr("titulo"),
                  onclick = "Shiny.setInputValue('ir_a', 'inicio', {priority: 'event'}); window.scrollTo(0, 0); return false;"),
   theme = TEMA,
   navbar_options = navbar_options(bg = "#3D3F8F", theme = "dark"),
@@ -221,6 +221,7 @@ ui <- page_navbar(
 
   # Inicio con el ícono de casita; el texto queda oculto para lectores de pantalla
   nav_panel(tags$span(title = tr("tab_inicio"), icon("house"), span(class = "visually-hidden", tr("tab_inicio"))), value = "inicio",
+    a(href = URL_SITE, target = "_blank", img(src = "logo.png", alt = tr("logo_alt"), class = "logo-inicio")),
     h3(tr("inicio_bienvenida")), HTML(tr("inicio_intro")),
     do.call(layout_column_wrap, c(list(width = "180px", class = "mb-3"), unname(lapply(names(ESTADISTICAS), caja_valor)))),
     card(card_header(tr("inicio_estudio_t")),
