@@ -439,7 +439,7 @@ ui <- page_navbar(
         a(href = leccion_url(LECCIONES$id[i]), target = "_blank", LECCIONES$titulo[i]),
         span(class = "small text-muted text-nowrap", LECCIONES$figura[i])),
       a(href = leccion_url(LECCIONES$id[i]), target = "_blank",
-        img(src = img_url(LECCIONES$img[i]), style = "width:100%", alt = LECCIONES$titulo[i], loading = "lazy")),
+        img(src = LECCIONES$img[i], style = "width:100%", alt = LECCIONES$titulo[i], loading = "lazy")),
       claves(LECCIONES$claves[[i]])
     )), list(
       card(class = "leccion-card",

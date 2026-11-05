@@ -12,9 +12,6 @@ URL_ZENODO   <- "https://doi.org/10.5281/zenodo.17742206"
 URL_PKG_DOI  <- "https://doi.org/10.5281/zenodo.23751369"  # DOI general del paquete (todas las versiones)
 URL_APP_DOI  <- "https://doi.org/10.5281/zenodo.23751397"  # DOI general de esta app (todas las versiones)
 
-# Figuras del sitio del paquete (se actualizan junto con el paquete)
-img_url <- function(f) sprintf("%s/articles/img/%s", URL_SITE, f)
-
 # Lecciones del paquete (sufijo _es / _en según idioma)
 leccion_url <- function(id) sprintf("%s/articles/%s_%s.html", URL_SITE, id, LANG)
 
@@ -514,6 +511,6 @@ LECCIONES <- data.frame(
   id = c("clinical", "intro_RNAseq", "l3_DEGs", "l4_GOterms", "l5_DEGs_monocytes_diff", "l6_DEGs_tolDcs", "l7_DEGs_between_groups"),
   titulo = tr("lecciones_titulo"),
   figura = tr("lecciones_figura"),
-  img = sprintf("lesson%d_overview_%s.png", 1:7, LANG)
+  img = sprintf("lecciones/lesson%d_overview_%s.png", 1:7, LANG)  # copias en www/ de vignettes/articles/img/ del paquete
 )
 LECCIONES$claves <- tr("lecciones_claves")
